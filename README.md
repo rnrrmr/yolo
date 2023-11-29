@@ -60,14 +60,12 @@ Deci의 독점 Neural Architecture Search 기술인 AutoNAC™는 YOLO-NAS 모�
 **발전 2: 학습 후 최적화 준비**
 VGG는 매우 유명한 전통적인 CNN 아키텍처입니다. 단순성과 효율성으로 유명합니다. 그러나 속도와 메모리 측면에서 그다지 효율적이지 않습니다. 이 문제를 해결하기 위해 RepVGG가 제안되었습니다. RepVGG는 VGG를 기반으로 하는 단순하면서도 강력한 아키텍처입니다. 속도와 메모리 측면에서 더 효율적으로 설계되었습니다. 재매개변수화를 통해 RepVGG는 다중 분기 아키텍처로 학습된 다음 더 빠른 추론을 위해 단일 분기로 변환될 수 있습니다.
 <br>
-<img src = "https://drive.google.com/uc?id=1wUoHYiD5Sh325BcmIJ_lfb0cWT19qj8C" width="600" height="500">
 <br>
 RepVGG를 사용하여 YOLO-NAS의 아키텍처는 재매개변수화를 통해 학습 후 최적화할 수 있으며 Post-training Quantization과도 호환됩니다. 이는 프로덕션 배포에 매우 중요한 기능입니다. 이 모델은 완전한 정밀도로 훈련된 다음 추론 속도 및 메모리 사용량에 맞게 최적화될 수 있습니다.
 
 **발전 3: 양자화 인식 훈련**
 교육 후 양자화를 통해 사용자는 추론을 위해 매우 효율적인 양자화 정수 모델을 만들 수 있습니다. 그러나 신중한 사후 훈련 보정에도 불구하고 모델 정확도는 허용할 수 없을 정도로 손상될 수 있습니다. 이런 일이 발생하면 훈련 후 보정만으로는 양자화된 정수 모델을 생성하기에 충분하지 않습니다. 대신 양자화 효과를 설명하는 방식으로 모델을 훈련해야 합니다. 훈련 중에 양자화 효과를 모델링할 수 있는 기능이 있으므로 양자화 인식 훈련이 들어오는 곳입니다.
 <br>
-<img src = "https://drive.google.com/uc?id=1i024bmp1nT5NwukgD8jPKda1DQFavB6t" width="600" height="500">
 <br>
 양자화 인식 블록과 선택적 양자화를 활용하여 YOLO-NAS는 성능을 최적화하는 아키텍처를 사용합니다. 이 모델의 설계에는 정확도 손실과 대기 시간/처리량 개선 사이의 균형에 따라 특정 계층에서 양자화를 건너뛰는 적응형 양자화가 포함됩니다. 모델이 INT8 양자화 버전으로 변환될 때 YOLO-NAS는 다른 모델에 비해 더 작은 정밀도 저하를 경험하여 S, M 및 L 변형에 대해 각각 0.51, 0.65 및 0.45 포인트의 mAP만 손실합니다. 이것은 양자화 동안 1-2 mAP 포인트의 손실을 경험하는 다른 모델과 대조됩니다. 이러한 혁신적인 기술은 뛰어난 물체 감지 기능과 우수한 성능을 갖춘 아키텍처에 기여합니다.
 
@@ -80,7 +78,7 @@ Distribution Focal Loss는 상자 예측을 유한 값 집합으로 이산화하
 Knowledge Distillation은 큰 모델에서 작은 모델로 지식을 이전하는 기술입니다. 이 방법을 통해 경량 모델은 데이터 세트에서만이 아니라 대형 모델에서 지식(확률 분포)을 학습하여 더 나은 성능을 얻을 수 있습니다. YOLO-NAS의 경우 학생 모델은 교사 모델의 분류와 DFL 예측 모두에서 학습합니다.
 
 <br>
-<img src = "https://drive.google.com/uc?id=1Kpa7lLCGaDzn5wKi4Nh-HndHitgo7zX3" >
+<img src = "[https://drive.google.com/uc?id=1Kpa7lLCGaDzn5wKi4Nh-HndHitgo7zX3](https://www.google.com/url?sa=i&url=https%3A%2F%2Fneptune.ai%2Fblog%2Fknowledge-distillation&psig=AOvVaw2Uv_uFjc4tdm73ajY8FBTK&ust=1701303827671000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKjQnOT454IDFQAAAAAdAAAAABAE)" >
 Knowledge Distillation Mechanism
 <br><br><br>
 
