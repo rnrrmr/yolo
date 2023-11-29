@@ -78,7 +78,7 @@ Distribution Focal Loss는 상자 예측을 유한 값 집합으로 이산화하
 Knowledge Distillation은 큰 모델에서 작은 모델로 지식을 이전하는 기술입니다. 이 방법을 통해 경량 모델은 데이터 세트에서만이 아니라 대형 모델에서 지식(확률 분포)을 학습하여 더 나은 성능을 얻을 수 있습니다. YOLO-NAS의 경우 학생 모델은 교사 모델의 분류와 DFL 예측 모두에서 학습합니다.
 
 <br>
-<img src = "[https://drive.google.com/uc?id=1Kpa7lLCGaDzn5wKi4Nh-HndHitgo7zX3](https://www.google.com/url?sa=i&url=https%3A%2F%2Fneptune.ai%2Fblog%2Fknowledge-distillation&psig=AOvVaw2Uv_uFjc4tdm73ajY8FBTK&ust=1701303827671000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKjQnOT454IDFQAAAAAdAAAAABAE)" >
+<img src = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fneptune.ai%2Fblog%2Fknowledge-distillation&psig=AOvVaw2Uv_uFjc4tdm73ajY8FBTK&ust=1701303827671000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKjQnOT454IDFQAAAAAdAAAAABAE" >
 Knowledge Distillation Mechanism
 <br><br><br>
 
